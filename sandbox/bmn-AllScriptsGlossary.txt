@@ -1,0 +1,79 @@
+HSPextraction.py
+##### programm that extracts bank seq ids from
+##### a blast result default flat file.
+##### Typical use : ./HSPextraction.blast file.blast ncbi
+##### use 454 instead of ncbi if the blastdb has been formated from
+##### a 454 generated fasta file.
+
+SubsetQual.py
+### program that subsets a qual file giving a subseted
+### fasta file. This works if the sequence ordering is
+### preserved between the original fasta, and the 
+### (typically with cd-hit-454) subseted one
+### example of use: SubsetQual.py F64.454.fasta F64.qual 
+
+MaskFasta.py
+### needs BioPython libraries
+### from a file.fasta and a corresponding file.qual
+### masks (i.e. replace by "N") the nucleotides below
+### a quality cutoff (arg 2), removes the leading and
+### trailing poly "N" and then delete sequences
+### that contain more than (arg 3) percent of "N" 
+
+cleanFastaHeaders.py
+### from a fasta file
+### cleans up the sequences headers removing spaces and adding a "|"
+
+countFasta.py
+### Counts several elements in a fasta file:
+### the nb of sequences, of residues, and the
+### mean sequence length
+
+fastaLenDistrib.py
+### Draws an histogramm of sequence lengths
+### from a fasta file (arg1) , and giving
+### a number of histo bins (arg2)
+### a name for the graph (arg3)
+
+fastq2fasta.py
+### reads a fastq file and write a fasta file
+### if mean sequence quality is below the (arg 2)
+### treshold.
+### example 1 : fastq2fasta.py seq.fastq 20
+### example 2 : fastq2fasta.py seq.fastq 0 (to keep all reads)
+
+GM2fasta.py
+### GeneMark default output to fasta
+
+SFF2fastq.py
+### Generates a fastq file from a 454 SFF file
+
+SubsetFasta.py
+### extracts sequences from a fasta file (arg 1)
+### whose id is in the IDs file (arg 2)
+
+countNt.py
+# counts all monoNucleotide in a DNA fasta file
+
+countDiNt.py
+# counts all dicleotides in a DNA fasta file
+
+GCfasta.py
+### from a fasta file (arg1) , and giving
+### a number of histo bins (arg2)
+
+countMotif.py
+# counts a motif (arg1) with overlaps in a fasta file (arg2)
+# example : countMotif.py ACCTTG chitin.fasta
+
+#!/usr/bin/python
+### cut a fasta query (arg1) in "nbPart" (arg3)
+### subFasta files and launches a blast programm (arg4)
+### vs the bank (arg2) for each subfasta and then
+### concatenates the tab delimited blast results in
+### one file. You can add any additional blastall option in the
+### arg5 with quotes like this : "-e 0.001 -a 2 -W 5"
+### example of execution :
+### paraBlast.py query.fasta blastdb 10 tblastx "-e 0.001 -a 2 -W 5"
+
+
