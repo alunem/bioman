@@ -110,7 +110,7 @@ def projectDetails(jid, verb="full"):
             print element
             for i,j in detail:
                 print '\t' + i + ':\t' + j
-        else: print str(element) + ':\t' + str(detail)
+        else: print unicode(element) + ':\t' + unicode(detail)
     
 def scanMGtab(pattern, verb=v):
     """
@@ -148,10 +148,10 @@ def scanMGtab(pattern, verb=v):
         print
         print header
         for project in MGdata:
-            print '\t'.join(str(x) for x in project)
+            print '\t'.join(unicode(x) for x in project)
         print
         print "--------"
-        print "A total of " + str(np) + " metagenome projects were found."
+        print "A total of " + unicode(np) + " metagenome projects were found."
         print "--------"
     else:
         print "No project was found, come back tomorrow."
@@ -179,7 +179,7 @@ def scanMG(pattern):
                     print j + ": " + k
         elif element=="total_count":
             if detail>0:
-                print "A total of " + str(detail) + "  metagenome projects were found:"
+                print "A total of " + unicode(detail) + "  metagenome projects were found:"
             else:
                 print "No project was found, come back tomorrow."            
 
