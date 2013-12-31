@@ -18,6 +18,7 @@ for p in `cat allProjects`;
 do
 	cd $wd
 	mkdir -p $p; cd $p
+	bmn-mgrast.py -t details $p > $p.txt
 	grep $p ../all.tsv | cut -f19 > $p.metagenomes
 	for m in `cat $p.metagenomes`;
 	do
