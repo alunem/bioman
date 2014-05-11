@@ -4,7 +4,7 @@ from argparse import RawTextHelpFormatter
 import sys
 
 parser = argparse.ArgumentParser(description="""
-HMM in maudules can target several KOs, and give this result (example 1):
+A given HMM from FOAM can target several KOs, and give this result (example 1):
 
 KO:K00100,KO:K00224     2
 KO:K00120       716
